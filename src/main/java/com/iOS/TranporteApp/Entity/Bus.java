@@ -40,7 +40,7 @@ public class Bus {
 
     //ER
     @ManyToMany
-    @JoinTable(name = "Bus_ruta",
+    @JoinTable(name = "Ruta_Bus",
     joinColumns = @JoinColumn(name = "id_Bus"),
             inverseJoinColumns = @JoinColumn(name = "id_Route")
     )
