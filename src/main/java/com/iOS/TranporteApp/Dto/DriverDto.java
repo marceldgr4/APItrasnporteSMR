@@ -11,6 +11,7 @@ import lombok.*;
 @Builder
 public class DriverDto {
     private Long id_Driver;
+    private String Code;
     private String full_name;
     private String phone;
     private Shift shift;
