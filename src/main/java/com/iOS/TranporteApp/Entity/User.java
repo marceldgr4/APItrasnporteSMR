@@ -47,7 +47,7 @@ public class User {
     private List<History> HistoryList;
 
     @OneToMany(mappedBy = "user")
-    private List<PQR> pqrs;
+    private List<PQR> pqr;
 
 
 

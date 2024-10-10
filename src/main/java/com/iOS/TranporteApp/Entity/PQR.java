@@ -22,6 +22,8 @@ public class PQR {
 
     @Column(nullable = false)
     private LocalDateTime Data_Register;
+    @Column(nullable = false)
+    private String Status;
 
     @ManyToOne
     @JoinColumn(name = "id_User")
