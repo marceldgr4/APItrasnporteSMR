@@ -34,6 +34,6 @@ public class Payments_Card {
 
     // Relación con Bus (muchos a uno)
     @ManyToOne
-    @JoinColumn(name = "id_bus")
-    private Bus bus;
+    @JoinColumn(name = "id_Bus")
+    private Bus buses;
 }

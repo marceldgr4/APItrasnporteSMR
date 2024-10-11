@@ -10,5 +10,5 @@ public interface LocationService {
     void  deleteLocation(Long id_Location);
     LocationsDto getLocationById(Long id_Location);
     List<LocationsDto> getAllLocation();
-    List<LocationsDto> getLocationByName(String name_Location);
+
 }

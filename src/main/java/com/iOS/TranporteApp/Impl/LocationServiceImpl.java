@@ -39,16 +39,12 @@ public class LocationServiceImpl implements LocationService {
         Locations location = locationRepository.findById(id_location).orElseThrow(()-> new RuntimeException("location not found"));
         return modelMapper.map(location, LocationsDto.class);
     }
-    @Override
-    public List<LocationsDto> getLocationByName(String name) {
-        List<Locations> locations = locationRepository.findByName(name);
-        return locations.stream().map(location -> modelMapper.map(location, LocationsDto.class)).collect(Collectors.toList());
-    }
+
     @Override
     public LocationsDto updateLocation(Long id_location, LocationsDto locationsDto) {
         Locations locations = locationRepository.findById(id_location).orElseThrow(()-> new RuntimeException("location not found"));
         locations.setAddress(locationsDto.getAddress());
-        locations.setName_Location(locationsDto.getName_Location());
+        locations.setName(locationsDto.getName_Location());
         Locations updatedLocation = locationRepository.save(locations);
         return modelMapper.map(updatedLocation, LocationsDto.class);
 

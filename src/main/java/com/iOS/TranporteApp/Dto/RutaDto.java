@@ -9,8 +9,8 @@ import java.sql.Time;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RouteDto {
-    private Long id_Route;
+public class RutaDto {
+    private Long id_Ruta;
     private String route_name;
     private String route_origen;
     private String route_destination;

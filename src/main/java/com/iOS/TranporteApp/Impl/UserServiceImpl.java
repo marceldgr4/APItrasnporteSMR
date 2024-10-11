@@ -27,10 +27,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto getUserByUsername(String username) {
-        User user = usuarioRepository.findByUsername(username)
+    public UserDto getUserByUsername(String fullname) {
+        User user = usuarioRepository.findByFullname(fullname)
                 .orElseThrow(() -> new RuntimeException("username not found"));
-        return modelMapper.map(user, UserDto.class); // Uso de ModelMapper
+        return modelMapper.map(user, UserDto.class); 
     }
 
     @Override

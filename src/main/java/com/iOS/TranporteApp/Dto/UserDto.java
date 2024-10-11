@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 @Builder
 public class UserDto {
     private Long id_User;
-    private String full_name;
+    private String fullname;
     private String email;
     private String password;
     private int phone;

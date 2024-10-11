@@ -29,27 +29,13 @@ public class HistoryServiceImp implements HistoryService {
         List<History> historyList = historyRepository.findAll();
         return historyList.stream().map(history -> modelMapper.map(history,HistoryDto.class)).collect(Collectors.toList());
    }
-   @Override
-    public List<HistoryDto>getHistoryByUserId(Long id_User){
-        List<History> historyList= historyRepository.findByUserId(id_User);
-        return historyList.stream().map(history -> modelMapper.map(history,HistoryDto.class)).collect(Collectors.toList());
 
-   }
-   @Override
-    public List<HistoryDto> getHistoryByUserName(String username) {
-        List<History> historyList= historyRepository.findByUsername(username);
-        return historyList.stream().map(history -> modelMapper.map(history,HistoryDto.class)).collect(Collectors.toList());
 
-   }
    @Override
-    public HistoryDto getHistoryById(Long id_History) {
-        History history = historyRepository.findById(id_History).orElseThrow(()-> new RuntimeException("history not found"));
+    public HistoryDto getHistoryById(Long id_history) {
+        History history = historyRepository.findById(id_history).orElseThrow(()-> new RuntimeException("history not found"));
         return modelMapper.map(history,HistoryDto.class);
    }
 
-   @Override
-    public void deleteHistoryByUserId(Long id_User) {
-        historyRepository.deleteById(id_User);
-   }
 
 }

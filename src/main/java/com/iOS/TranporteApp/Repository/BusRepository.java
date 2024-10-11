@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface BusRepository extends JpaRepository<Bus, Long> {
-    List<Bus> findByBus_Plate(String plate);
+    List<Bus> findByPlate(String plate);
+
+
 }

@@ -35,10 +35,5 @@ public class PQRServiceImpl implements PQRService {
         return pqrs.stream().map(pqr -> modelMapper.map(pqr,PQRDto.class))
                 .collect(Collectors.toList());
     }
-    @Override
-    public List<PQRDto>  getPQRByUserName(String username){
-        List<PQR> pqrList= pqrRepository.findByName(username);
-        return pqrList.stream().map(pqr -> modelMapper.map(pqr,PQRDto.class)).collect(Collectors.toList());
 
-    }
 }

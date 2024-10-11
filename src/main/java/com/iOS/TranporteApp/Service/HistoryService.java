@@ -6,10 +6,7 @@ import java.util.List;
 
 public interface HistoryService {
     HistoryDto CreateHistory(HistoryDto historyDto);
-
     List<HistoryDto> getAllHistory();
-    List<HistoryDto> getHistoryByUserId(Long userId);
-    List<HistoryDto> getHistoryByUserName(String userName);
-    void deleteHistoryByUserId(Long id_user);
-    HistoryDto getHistoryById(Long id_History);
+
+    HistoryDto getHistoryById(Long id_history);
 }

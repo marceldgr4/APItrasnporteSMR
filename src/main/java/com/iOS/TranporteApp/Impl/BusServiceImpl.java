@@ -43,8 +43,8 @@ public class BusServiceImpl  implements BusService {
                 .collect(Collectors.toList());
     }
     @Override
-    public List<BusDto> getBusByBus_Plate(String plate){
-        List<Bus> buses= busRepository.findByBus_Plate(plate);
+    public List<BusDto> getBusByPlate(String plate){
+        List<Bus> buses= busRepository.findByPlate(plate);
         return buses.stream().map(bus-> modelMapper.map(bus,BusDto.class))
                 .collect(Collectors.toList());
     }

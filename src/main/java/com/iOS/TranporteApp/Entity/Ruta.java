@@ -4,20 +4,21 @@ import lombok.*;
 
 import java.sql.Time;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
-@Table(name = "Routes")
+@Table(name = "Rutas")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 
-public class Routes {
+public class Ruta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Route;
+    private Long id_Ruta;
 
     @Column(nullable = false, unique = true)
     private String route_name;
@@ -42,15 +43,13 @@ public class Routes {
 
 //ERD
 
-    @ManyToMany
-    @JoinTable(name = "Ruta_bus",
-    joinColumns = @JoinColumn(name = "id_Route"),
-    inverseJoinColumns = @JoinColumn(name = "id_Bus"))
-    private List<Bus> busList;
+    @ManyToMany(mappedBy = "ruta")
+    private Set<Bus> buses;
 
 
-    @OneToMany(mappedBy = "routes")
+    @OneToMany(mappedBy = "ruta")
     private List<Stops> stops;
+
 
 
 

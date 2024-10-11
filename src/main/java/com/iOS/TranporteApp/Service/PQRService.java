@@ -8,5 +8,5 @@ public interface PQRService {
     PQRDto createPQR(PQRDto pqrDto);
     List<PQRDto> getAllPQR();
     PQRDto getPQRById(Long id_pqr);
-    List<PQRDto> getPQRByUserName(String username);
+
 }

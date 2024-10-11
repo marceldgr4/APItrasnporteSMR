@@ -5,6 +5,7 @@ import lombok.*;
 
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -21,7 +22,7 @@ public class Bus {
     private Long id_Bus;
 
     @Column(nullable = false, unique = true)
-    private String Bus_plate;
+    private String plate;
 
     @Column(nullable = false, unique = true)
     private String status;
@@ -39,30 +40,29 @@ public class Bus {
     private String Brand;
 
     //ER
-    @ManyToMany
-    @JoinTable(name = "Ruta_Bus",
-    joinColumns = @JoinColumn(name = "id_Bus"),
-            inverseJoinColumns = @JoinColumn(name = "id_Route")
-    )
-    private List<Routes> routes;
+
 
     @ManyToMany
     @JoinTable(name = "Bus_locations",
             joinColumns = @JoinColumn(name = "id_Bus"),
             inverseJoinColumns = @JoinColumn(name = "id_Location")
     )
-    private List<Locations> location;
+    private Set<Locations> location;
+
+    @ManyToMany
+    @JoinTable(
+            name = "bus_ruta",
+            joinColumns = @JoinColumn(name = "id_Bus"),
+            inverseJoinColumns = @JoinColumn(name = "id_Ruta")
+    )
+    private Set<Ruta> ruta;
 
     @ManyToOne
     @JoinColumn(name = "id_Driver")
     private Drivers driver;
 
-    @OneToMany(mappedBy = "bus")
+    @OneToMany(mappedBy = "buses")
     private List<Payments_Card> payments;
-
-
-
-
 
 
 }

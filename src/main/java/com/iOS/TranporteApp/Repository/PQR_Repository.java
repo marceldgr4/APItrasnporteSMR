@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PQR_Repository extends JpaRepository<PQR,Long> {
-   List<PQR>  findByName(String username);
+
 }

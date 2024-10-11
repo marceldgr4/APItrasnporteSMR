@@ -17,11 +17,11 @@ import java.util.List;
 
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_User;
 
     @Column(nullable = false, unique = true)
-    private String full_name;
+    private String fullname;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -44,7 +44,7 @@ public class User {
     private List<Transaction> transactionList;
 
     @OneToMany(mappedBy = "user")
-    private List<History> HistoryList;
+    private List<History> historyList;
 
     @OneToMany(mappedBy = "user")
     private List<PQR> pqr;

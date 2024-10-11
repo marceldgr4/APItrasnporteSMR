@@ -1,14 +1,14 @@
 package com.iOS.TranporteApp.Service;
 
-import com.iOS.TranporteApp.Dto.RouteDto;
+import com.iOS.TranporteApp.Dto.RutaDto;
 
 import java.util.List;
 
 public interface RouteService {
-    RouteDto CreateRoute(RouteDto routeDto);
-    RouteDto UpdateRoute(Long id_Route,RouteDto routeDto);
-    void DeleteRoute(Long id_Route);
-    List<RouteDto> getAllRoute();
-    RouteDto getRouteById(Long id_Route);
+    RutaDto CreateRoute(RutaDto rutaDto);
+    RutaDto UpdateRoute(Long id_Ruta, RutaDto rutaDto);
+    void DeleteRoute(Long id_Ruta);
+    List<RutaDto> getAllRoute();
+    RutaDto getRouteById(Long id_Ruta);
 
 }

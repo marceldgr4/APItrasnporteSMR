@@ -18,8 +18,8 @@ public class Locations {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Location;
 
-    @Column( nullable = false, unique = true)
-    private String name_Location;
+    @Column( name = "name", nullable = false, unique = true)
+    private String name;
 
     @Column(nullable = false,unique = true)
     private String address;

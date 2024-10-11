@@ -1,7 +1,7 @@
 package com.iOS.TranporteApp.Impl;
 
-import com.iOS.TranporteApp.Dto.RouteDto;
-import com.iOS.TranporteApp.Entity.Routes;
+import com.iOS.TranporteApp.Dto.RutaDto;
+import com.iOS.TranporteApp.Entity.Ruta;
 import com.iOS.TranporteApp.Repository.RoutesRepository;
 import com.iOS.TranporteApp.Service.RouteService;
 import jakarta.persistence.EntityNotFoundException;
@@ -20,30 +20,30 @@ public class RouteServiceImpl implements RouteService {
     private ModelMapper modelMapper;
 
     @Override
-    public RouteDto UpdateRoute(Long id_Route, RouteDto routeDto){
-        Routes routes = routesRepository.findById(id_Route).orElseThrow(()-> new EntityNotFoundException("Routes not found"));
-        routes.setEnd_Time(routeDto.getEnd_Time());
-        Routes UpdatedRoutes=routesRepository.save(routes);
-        return modelMapper.map(UpdatedRoutes,RouteDto.class);
+    public RutaDto UpdateRoute(Long id_Ruta, RutaDto rutaDto){
+        Ruta ruta = routesRepository.findById(id_Ruta).orElseThrow(()-> new EntityNotFoundException("Routes not found"));
+        ruta.setEnd_Time(rutaDto.getEnd_Time());
+        Ruta updatedRuta =routesRepository.save(ruta);
+        return modelMapper.map(updatedRuta, RutaDto.class);
     }
     @Override
-    public List<RouteDto> getAllRoute(){
-        return routesRepository.findAllBy().stream().map(route->modelMapper.map(route,RouteDto.class))
+    public List<RutaDto> getAllRoute(){
+        return routesRepository.findAllBy().stream().map(route->modelMapper.map(route, RutaDto.class))
                 .collect(Collectors.toList());
     }
     @Override
-    public RouteDto getRouteById(Long id){
-        Routes routes=routesRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Routes not found"));
-        return modelMapper.map(routes,RouteDto.class);
+    public RutaDto getRouteById(Long id){
+        Ruta ruta =routesRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Routes not found"));
+        return modelMapper.map(ruta, RutaDto.class);
     }
     @Override
-    public RouteDto CreateRoute(RouteDto routeDto){
-        Routes routes=modelMapper.map(routeDto,Routes.class);
-        Routes savedRoutes=routesRepository.save(routes);
-        return modelMapper.map(savedRoutes,RouteDto.class);
+    public RutaDto CreateRoute(RutaDto rutaDto){
+        Ruta ruta =modelMapper.map(rutaDto, Ruta.class);
+        Ruta savedRuta =routesRepository.save(ruta);
+        return modelMapper.map(savedRuta, RutaDto.class);
     }
     @Override
-    public void DeleteRoute(Long id){
-        routesRepository.deleteById(id);
+    public void DeleteRoute(Long id_Ruta){
+        routesRepository.deleteById(id_Ruta);
     }
 }

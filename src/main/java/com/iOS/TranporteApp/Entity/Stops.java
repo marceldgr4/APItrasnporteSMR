@@ -23,8 +23,8 @@ public class Stops {
     private String Location;
 
     @ManyToOne
-    @JoinColumn(name = "id_Route")
-    private Routes routes;
+    @JoinColumn(name = "id_Ruta")
+    private Ruta ruta;
 
 
 

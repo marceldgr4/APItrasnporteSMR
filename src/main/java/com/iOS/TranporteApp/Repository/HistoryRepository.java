@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface HistoryRepository extends JpaRepository<History, Long> {
-    List<History> findByUserId(Long idUser);
 
-    List<History> findByUsername(String username);
+
 }

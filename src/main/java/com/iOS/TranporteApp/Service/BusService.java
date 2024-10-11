@@ -13,11 +13,11 @@ public interface BusService {
 
     List<BusDto> getAllBuses();
 
-    List<BusDto> getBusByBus_Plate(String plate);
+    List<BusDto> getBusByPlate(String plate);
 
-    BusDto getBusById(Long id);
+    BusDto getBusById(Long id_Bus);
 
-    void deleteBus(Long busId);
+    void deleteBus(Long id_Bus);
 
 }
 

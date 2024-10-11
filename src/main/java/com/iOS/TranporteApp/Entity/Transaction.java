@@ -30,7 +30,7 @@ public class Transaction {
     private Double amount;
 //ERD
     @OneToOne
-    @JoinColumn(name = "id_History")
+    @JoinColumn(name = "id_history")
     private History history;
 
     @ManyToOne

@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 public class BusDto {
     private Long id_Bus;
-    private String Bus_plate;
+    private String plate;
     private String status;
     private String type;
     private String model;

@@ -23,7 +23,7 @@ public class History {
 
     // Relación muchos a uno con User
     @ManyToOne
-    @JoinColumn(name = "id_user")
+    @JoinColumn(name = "id_User")
     private User user;
 
     // Relación uno a uno con Payments_Card
