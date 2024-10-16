@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class BusDto {
-    private Long id_Bus;
+    private Long id_bus;
     private String plate;
     private String status;
     private String type;

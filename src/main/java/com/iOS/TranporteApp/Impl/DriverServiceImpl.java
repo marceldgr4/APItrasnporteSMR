@@ -1,7 +1,7 @@
 package com.iOS.TranporteApp.Impl;
 
-import com.iOS.TranporteApp.Dto.DriverDto;
-import com.iOS.TranporteApp.Entity.Drivers;
+import com.iOS.TranporteApp.Dto.ConductorDto;
+import com.iOS.TranporteApp.Entity.Conductor;
 import com.iOS.TranporteApp.Repository.DriverRepository;
 import com.iOS.TranporteApp.Service.DriversService;
 import org.modelmapper.ModelMapper;
@@ -22,35 +22,35 @@ public class DriverServiceImpl implements DriversService {
     private ModelMapper modelMapper;
 
     @Override
-    public DriverDto createDriver(DriverDto driverDto) {
-        Drivers driver = modelMapper.map(driverDto, Drivers.class);
-        Drivers driverSaved = driverRepository.save(driver);
-        return modelMapper.map(driverSaved, DriverDto.class);
+    public ConductorDto createDriver(ConductorDto conductorDto) {
+        Conductor driver = modelMapper.map(conductorDto, Conductor.class);
+        Conductor driverSaved = driverRepository.save(driver);
+        return modelMapper.map(driverSaved, ConductorDto.class);
     }
     @Override
-    public DriverDto updateDriver(Long id_Drivers, DriverDto driverDto) {
-        Drivers driver = driverRepository.findById(id_Drivers)
+    public ConductorDto updateDriver(Long id_conductor, ConductorDto conductorDto) {
+        Conductor driver = driverRepository.findById(id_conductor)
                 .orElseThrow(()-> new RuntimeException("driver not found"));
-        driver.setId_driver(driverDto.getId_Driver());
-        driver.setCode(driverDto.getCode());
-        Drivers updatedDriver = driverRepository.save(driver);
-        return modelMapper.map(updatedDriver, DriverDto.class);
+        driver.setId_conductor(conductorDto.getId_conductor());
+        driver.setCode(conductorDto.getCode());
+        Conductor updatedDriver = driverRepository.save(driver);
+        return modelMapper.map(updatedDriver, ConductorDto.class);
     }
     @Override
     public void deleteDriver(Long id_Driver){
         driverRepository.deleteById(id_Driver);
     }
     @Override
-    public List<DriverDto> getAllDrivers() {
-        List<Drivers> drivers = driverRepository.findAll();
-        return drivers.stream().map(driver->modelMapper.map(driver,DriverDto.class))
+    public List<ConductorDto> getAllDrivers() {
+        List<Conductor> drivers = driverRepository.findAll();
+        return drivers.stream().map(driver->modelMapper.map(driver, ConductorDto.class))
         .collect(Collectors.toList());
     }
     @Override
-    public DriverDto getDriverById(Long id_Driver) {
-        Drivers drivers = driverRepository.findById(id_Driver)
+    public ConductorDto getDriverById(Long id_Driver) {
+        Conductor conductor = driverRepository.findById(id_Driver)
                 .orElseThrow(() -> new RuntimeException("Driver not found"));
-        return modelMapper.map(drivers,DriverDto.class);
+        return modelMapper.map(conductor, ConductorDto.class);
     }
 
 }

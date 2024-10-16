@@ -36,8 +36,9 @@ public class Transaction {
     @JoinColumn(name = "id_User")
     private User user;
 
-    @OneToMany(mappedBy = "transaction")
-    private List<Payments_Card> payments;
+    @OneToOne
+    @JoinColumn(name = "id_payment")
+    private Payments payments;
 
 
 }

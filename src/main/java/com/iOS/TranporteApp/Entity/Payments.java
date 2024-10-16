@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Payments_Card {
+public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_payment;
@@ -22,17 +22,18 @@ public class Payments_Card {
     @Column(nullable = false)
     private LocalDateTime date;
 
-    // Relación con Transaction (muchos a uno)
-    @ManyToOne
+
+    @OneToOne
     @JoinColumn(name = "id_transaction")
     private Transaction transaction;
 
-    // Relación uno a uno con History
-    @OneToOne(mappedBy = "payment")  // Este 'mappedBy' debe apuntar al campo correcto en History
-    private History history;
 
-    // Relación con Bus (muchos a uno)
+    @OneToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+
+
     @ManyToOne
-    @JoinColumn(name = "bus_id")
+    @JoinColumn(name = "id_bus")
     private Bus buses;
 }

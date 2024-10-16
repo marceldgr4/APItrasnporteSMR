@@ -4,17 +4,18 @@ import com.iOS.TranporteApp.Emun.Shift;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "Drivers")
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Drivers {
+public class Conductor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_driver;
+    private Long id_conductor;
 
     @Column(nullable = false,unique = true)
     private String Code;
@@ -29,8 +30,9 @@ public class Drivers {
     private Shift shift;
 
 //ERD
-    @OneToOne
-    @JoinColumn(name = "id_Bus")
-    private Bus bus;
+@OneToMany(mappedBy = "conductor")
+private List<Bus> buses;
+
+
 
 }

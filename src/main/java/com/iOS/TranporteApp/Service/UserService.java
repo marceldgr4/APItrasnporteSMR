@@ -10,7 +10,7 @@ public interface UserService {
     UserDto getUserByEmail(String email);
     UserDto getUserByPhone(int phone);
     List<UserDto> getAllUsers();
-    void deleteUserById(Long id_user);
+
     UserDto updateUser(Long id_User,UserDto userDto);
     UserDto CreateUser(UserDto userDto);
 }

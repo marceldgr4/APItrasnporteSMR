@@ -41,23 +41,18 @@ public class Bus {
     //ER
 
 
-    @ManyToMany
-    @JoinTable(name = "bus_locations",
-            joinColumns = @JoinColumn(name = "id_bus"),
-            inverseJoinColumns = @JoinColumn(name = "id_location"))
-    private Set<Locations> location;
 
     @ManyToMany
     @JoinTable(name = "bus_ruta",
-            joinColumns = @JoinColumn(name = "id_Bus"),
-            inverseJoinColumns = @JoinColumn(name = "id_Ruta"))
+            joinColumns = @JoinColumn(name = "id_bus"),
+            inverseJoinColumns = @JoinColumn(name = "id_ruta"))
     private Set<Ruta> ruta;
 
     @ManyToOne
-    @JoinColumn(name = "driver_id")
-    private Drivers driver;
+    @JoinColumn(name = "id_conductor")
+    private Conductor conductor;
 
     @OneToMany(mappedBy = "buses")
-    private List<Payments_Card> payments;
+    private List<Payments> payments;
 
 }

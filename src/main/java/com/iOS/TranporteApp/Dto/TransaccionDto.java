@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 public class TransaccionDto {
     private Long id_transaction;
+    private Long id_user;
     private TypeTransaction typeTransaction;
     private LocalDateTime date_transaction;
     private Double amount;

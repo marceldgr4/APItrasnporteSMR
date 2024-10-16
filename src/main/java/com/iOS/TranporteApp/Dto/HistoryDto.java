@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class HistoryDto {
     private Long id_history;
     private Long id_User;
-    private  Long id_payment;
+
     private Long id_transaction;
     private LocalDateTime date_History;
 }

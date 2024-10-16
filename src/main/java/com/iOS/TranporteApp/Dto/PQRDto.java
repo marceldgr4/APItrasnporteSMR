@@ -9,7 +9,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class PQRDto {
-    private Long id_PQR;
+    private Long id_pqr;
+    private Long id_user;
     private String Comments;
     private LocalDateTime Data_Register;
 }

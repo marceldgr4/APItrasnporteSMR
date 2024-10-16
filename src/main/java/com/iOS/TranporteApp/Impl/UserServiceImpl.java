@@ -55,12 +55,7 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public void deleteUserById(Long id_user) {
-        User user = usuarioRepository.findById(id_user)
-                .orElseThrow(() -> new RuntimeException("id_User not found"));
-        usuarioRepository.delete(user);
-    }
+
 
     @Override
     public UserDto updateUser(Long id_User, UserDto userDto) {

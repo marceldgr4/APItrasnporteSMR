@@ -40,10 +40,11 @@ public class User {
     //ER
 
     @OneToMany(mappedBy = "user")
-    private List<Transaction> transactionList;
+    private List<Transaction> transaction;
 
-    @OneToMany(mappedBy = "user")
-    private List<History> historyList;
+    @OneToOne
+    @JoinColumn(name = "id_history")
+    private History history;
 
     @OneToMany(mappedBy = "user")
     private List<PQR> pqr;

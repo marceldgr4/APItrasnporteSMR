@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DriverDto {
-    private Long id_Driver;
+public class ConductorDto {
+    private Long id_conductor;
     private String Code;
     private String full_name;
     private String phone;

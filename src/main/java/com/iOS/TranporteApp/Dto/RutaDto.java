@@ -9,7 +9,7 @@ import java.sql.Time;
 @AllArgsConstructor
 @Builder
 public class RutaDto {
-    private Long id_Ruta;
+    private Long id_ruta;
     private String route_name;
     private String route_origen;
     private String route_destination;

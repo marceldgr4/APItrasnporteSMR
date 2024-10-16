@@ -11,7 +11,7 @@ import com.iOS.TranporteApp.Dto.UserDto;
 import com.iOS.TranporteApp.Service.UserService;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/Contoller/user")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -22,7 +22,7 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
     // Endpoint para obtener un usuario por su ID
-    @GetMapping("{/id_user}")
+    @GetMapping("/{id_user}")
     public ResponseEntity<UserDto> getUserById(@PathVariable("id_user") Long id_User){
         UserDto user = userService.getUserById(id_User);
         return ResponseEntity.ok(user);
@@ -35,7 +35,7 @@ public class UserController {
         return ResponseEntity.ok(newUser);
     }
     // Endpoint para actualizar un usuario
-    @PutMapping("{/id_user}")
+    @PutMapping("/{id_user}")
     public ResponseEntity<UserDto> updateUser (@PathVariable Long id_user, @RequestBody UserDto userDto){
         UserDto updatedUser = userService.updateUser(id_user, userDto);
         return ResponseEntity.ok(updatedUser);
