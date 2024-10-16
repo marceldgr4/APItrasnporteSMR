@@ -4,8 +4,7 @@ import lombok.*;
 
 import java.sql.Time;
 @Data
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

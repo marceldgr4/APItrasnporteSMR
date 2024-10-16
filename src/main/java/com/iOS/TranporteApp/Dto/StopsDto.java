@@ -3,8 +3,7 @@ package com.iOS.TranporteApp.Dto;
 import lombok.*;
 
 @Data
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

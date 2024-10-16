@@ -8,8 +8,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "Users")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -18,7 +17,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_User;
+    private Long id_user;
 
     @Column(nullable = false, unique = true)
     private String fullname;

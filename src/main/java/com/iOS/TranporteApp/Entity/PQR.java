@@ -7,15 +7,14 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @Table(name = "PQRS")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class PQR {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_PQR;
+    private Long id_pqr;
 
     @Column(nullable = false)
     private String Comments;

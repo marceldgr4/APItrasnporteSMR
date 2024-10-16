@@ -10,8 +10,7 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "Buses")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -19,18 +18,18 @@ import java.util.Set;
 public class Bus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Bus;
+    private Long id_bus;
 
     @Column(nullable = false, unique = true)
     private String plate;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String status;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String type;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String model;
 
     @Column(nullable = false, unique = true)
@@ -43,26 +42,22 @@ public class Bus {
 
 
     @ManyToMany
-    @JoinTable(name = "Bus_locations",
-            joinColumns = @JoinColumn(name = "id_Bus"),
-            inverseJoinColumns = @JoinColumn(name = "id_Location")
-    )
+    @JoinTable(name = "bus_locations",
+            joinColumns = @JoinColumn(name = "id_bus"),
+            inverseJoinColumns = @JoinColumn(name = "id_location"))
     private Set<Locations> location;
 
     @ManyToMany
-    @JoinTable(
-            name = "bus_ruta",
+    @JoinTable(name = "bus_ruta",
             joinColumns = @JoinColumn(name = "id_Bus"),
-            inverseJoinColumns = @JoinColumn(name = "id_Ruta")
-    )
+            inverseJoinColumns = @JoinColumn(name = "id_Ruta"))
     private Set<Ruta> ruta;
 
     @ManyToOne
-    @JoinColumn(name = "id_Driver")
+    @JoinColumn(name = "driver_id")
     private Drivers driver;
 
     @OneToMany(mappedBy = "buses")
     private List<Payments_Card> payments;
-
 
 }

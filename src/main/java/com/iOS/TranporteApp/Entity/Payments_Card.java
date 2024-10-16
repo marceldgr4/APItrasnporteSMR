@@ -7,8 +7,7 @@ import java.time.LocalDateTime;
 @Entity
 @Data
 @Table(name = "Payments_Card")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -34,6 +33,6 @@ public class Payments_Card {
 
     // Relación con Bus (muchos a uno)
     @ManyToOne
-    @JoinColumn(name = "id_Bus")
+    @JoinColumn(name = "bus_id")
     private Bus buses;
 }

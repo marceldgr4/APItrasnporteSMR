@@ -9,8 +9,7 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "Rutas")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -18,7 +17,7 @@ import java.util.Set;
 public class Ruta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Ruta;
+    private Long id_ruta;
 
     @Column(nullable = false, unique = true)
     private String route_name;
@@ -46,13 +45,7 @@ public class Ruta {
     @ManyToMany(mappedBy = "ruta")
     private Set<Bus> buses;
 
-
     @OneToMany(mappedBy = "ruta")
     private List<Stops> stops;
-
-
-
-
-
 
 }

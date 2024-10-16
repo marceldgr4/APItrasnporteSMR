@@ -7,15 +7,14 @@ import lombok.*;
 @Entity
 @Data
 @Table(name = "Drivers")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Drivers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Driver;
+    private Long id_driver;
 
     @Column(nullable = false,unique = true)
     private String Code;

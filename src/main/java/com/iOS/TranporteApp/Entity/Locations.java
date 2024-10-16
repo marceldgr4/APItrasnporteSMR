@@ -7,8 +7,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "Locations")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -16,7 +15,7 @@ import java.util.List;
 public class Locations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Location;
+    private Long id_location;
 
     @Column( name = "name", nullable = false, unique = true)
     private String name;

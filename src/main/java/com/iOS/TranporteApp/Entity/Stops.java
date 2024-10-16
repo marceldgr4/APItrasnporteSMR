@@ -5,8 +5,7 @@ import lombok.*;
 @Entity
 @Data
 @Table(name = "Stops")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -14,7 +13,7 @@ import lombok.*;
 public class Stops {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_Stop;
+    private Long id_stop;
 
     @Column(nullable = false, unique = true)
     private String stop_name;
@@ -23,7 +22,7 @@ public class Stops {
     private String Location;
 
     @ManyToOne
-    @JoinColumn(name = "id_Ruta")
+    @JoinColumn(name = "id_ruta")
     private Ruta ruta;
 
 

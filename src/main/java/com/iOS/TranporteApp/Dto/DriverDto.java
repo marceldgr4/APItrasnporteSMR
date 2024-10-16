@@ -4,8 +4,7 @@ import com.iOS.TranporteApp.Emun.Shift;
 import lombok.*;
 
 @Data
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

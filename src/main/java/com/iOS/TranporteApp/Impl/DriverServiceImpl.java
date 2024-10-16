@@ -31,7 +31,7 @@ public class DriverServiceImpl implements DriversService {
     public DriverDto updateDriver(Long id_Drivers, DriverDto driverDto) {
         Drivers driver = driverRepository.findById(id_Drivers)
                 .orElseThrow(()-> new RuntimeException("driver not found"));
-        driver.setId_Driver(driverDto.getId_Driver());
+        driver.setId_driver(driverDto.getId_Driver());
         driver.setCode(driverDto.getCode());
         Drivers updatedDriver = driverRepository.save(driver);
         return modelMapper.map(updatedDriver, DriverDto.class);

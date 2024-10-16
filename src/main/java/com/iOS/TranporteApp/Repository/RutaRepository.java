@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 
 @Repository
-public interface RoutesRepository extends JpaRepository<Ruta, Long> {
+public interface RutaRepository extends JpaRepository<Ruta, Long> {
     Collection<Object> findAllBy();
 }

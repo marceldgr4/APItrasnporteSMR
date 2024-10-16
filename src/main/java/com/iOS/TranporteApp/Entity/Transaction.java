@@ -9,8 +9,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "Transaction")
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
