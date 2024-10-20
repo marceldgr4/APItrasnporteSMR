@@ -3,7 +3,7 @@ package com.iOS.TranporteApp.Impl;
 import com.iOS.TranporteApp.Dto.PaymentsDto;
 import com.iOS.TranporteApp.Entity.Payments;
 import com.iOS.TranporteApp.Repository.PaymentsCardRepository;
-import com.iOS.TranporteApp.Service.Payment_CardService;
+import com.iOS.TranporteApp.Service.PaymentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class PaymentServiceImpl implements Payment_CardService {
+public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private PaymentsCardRepository PaymentsCardRepository;
     @Autowired
