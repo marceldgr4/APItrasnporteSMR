@@ -36,7 +36,7 @@ public class UserController {
     }
     // Endpoint para actualizar un usuario
     @PutMapping("/{id_user}")
-    public ResponseEntity<UserDto> updateUser (@PathVariable Long id_user, @RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> updateUser (@PathVariable("id_user") Long id_user, @RequestBody UserDto userDto){
         UserDto updatedUser = userService.updateUser(id_user, userDto);
         return ResponseEntity.ok(updatedUser);
     }

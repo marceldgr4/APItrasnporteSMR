@@ -30,7 +30,7 @@ public class PaymentController {
     }
     //obtener un pago por id
     @GetMapping("/{id_payment}")
-    public ResponseEntity<PaymentsDto> getPaymentById(@PathVariable Long id_payment) {
+    public ResponseEntity<PaymentsDto> getPaymentById(@PathVariable("id_payment") Long id_payment) {
         PaymentsDto payment = paymentService.getPaymentById(id_payment);
         return new ResponseEntity<>(payment, HttpStatus.OK);
     }

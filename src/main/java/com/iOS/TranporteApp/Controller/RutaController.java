@@ -36,7 +36,7 @@ public class RutaController {
     }
     //obtener ruta por id
     @GetMapping("/{id_ruta}")
-    public ResponseEntity<RutaDto> getRutaById(@PathVariable Long id_ruta) {
+    public ResponseEntity<RutaDto> getRutaById(@PathVariable ("id_ruta") Long id_ruta) {
         RutaDto rutaDto = rutaService.getRouteById(id_ruta);
         return new ResponseEntity<>(rutaDto, HttpStatus.OK);
     }

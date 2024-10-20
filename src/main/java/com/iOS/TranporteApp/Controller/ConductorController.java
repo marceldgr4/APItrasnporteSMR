@@ -16,14 +16,14 @@ public class ConductorController {
     @Autowired
     private DriversService driversService;
     //crea un conductor
-    public ResponseEntity<ConductorDto> createConductor(ConductorDto conductorDto) {
+    public ResponseEntity<ConductorDto> createConductor(@RequestBody ConductorDto conductorDto) {
         ConductorDto newConductorDto = driversService.createDriver(conductorDto);
         return new ResponseEntity<>(newConductorDto, HttpStatus.CREATED);
     }
 
     //Actualizar conductor por id
     @PutMapping("/{id_conductor})")
-    public ResponseEntity<ConductorDto> updateDriver(@PathVariable Long id_conductor, ConductorDto conductorDto) {
+    public ResponseEntity<ConductorDto> updateDriver(@PathVariable ("id_conductor")Long id_conductor, ConductorDto conductorDto) {
         ConductorDto updateConductorDto = driversService.updateDriver(id_conductor, conductorDto);
         return new ResponseEntity<>(updateConductorDto, HttpStatus.OK);
 
@@ -36,7 +36,7 @@ public class ConductorController {
     }
     // Eliminar conductor por id
     @DeleteMapping("/{id_conductor}")
-    public ResponseEntity<ConductorDto> deleteConductor(@PathVariable Long id_conductor) {
+    public ResponseEntity<ConductorDto> deleteConductor(@PathVariable("id_conductor") Long id_conductor) {
         driversService.deleteDriver(id_conductor);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

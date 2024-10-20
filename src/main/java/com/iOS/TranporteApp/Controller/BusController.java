@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("Controller/buses")
+@RequestMapping("Controller/Bus")
 public class BusController {
     @Autowired
     private BusService busService;
@@ -21,8 +21,8 @@ public class BusController {
         List<BusDto> buses = busService.getAllBuses();
         return ResponseEntity.ok(buses);
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<BusDto> getBusById(@PathVariable("id") Long id_bus){
+    @GetMapping("/{id_bus}")
+    public ResponseEntity<BusDto> getBusById(@PathVariable("id_bus") Long id_bus){
         BusDto bus = busService.getBusById(id_bus);
         return ResponseEntity.ok(bus);
     }
@@ -32,8 +32,8 @@ public class BusController {
         BusDto newBus= busService.createBus(bus);
         return ResponseEntity.ok(newBus);
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<BusDto> updateBus(@PathVariable("id") Long id_bus, @RequestBody BusDto bus){
+    @PutMapping("/{id_bus}")
+    public ResponseEntity<BusDto> updateBus(@PathVariable("id_bus") Long id_bus, @RequestBody BusDto bus){
         busService.updateBus(id_bus, bus);
         return ResponseEntity.ok(bus);
     }

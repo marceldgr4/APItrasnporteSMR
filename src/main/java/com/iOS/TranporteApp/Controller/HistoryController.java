@@ -31,7 +31,7 @@ public class HistoryController {
     }
     //obtener historial por id
     @GetMapping("/{id_Histrory}")
-    public ResponseEntity<HistoryDto> getHistoryById(@PathVariable Long id_Histrory){
+    public ResponseEntity<HistoryDto> getHistoryById(@PathVariable("id_History") Long id_Histrory){
         HistoryDto historyDto = historyService.getHistoryById(id_Histrory);
         return new ResponseEntity<>(historyDto, HttpStatus.OK);
     }

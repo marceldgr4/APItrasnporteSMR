@@ -31,7 +31,7 @@ public class PqrController {
     }
     //obtener pqr por id
     @GetMapping("/{id_pqr}")
-    private ResponseEntity<PQRDto> getPQRById(@PathVariable Long id_pqr) {
+    private ResponseEntity<PQRDto> getPQRById(@PathVariable ("id_pqr") Long id_pqr) {
         PQRDto pqrDto = pqrService.getPQRById(id_pqr);
         return new ResponseEntity<>(pqrDto, HttpStatus.OK);
     }
